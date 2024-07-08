@@ -83,3 +83,21 @@ function updateRow(button) {
 
     updateTable();
 }
+
+function downloadCSV() {
+    let csv = 'Shirt Number,Total Assists,Total Goals,Total Blocks/Interceptions\n';
+    
+    for (const player in playerStats) {
+        csv += `${player},${playerStats[player].assists},${playerStats[player].goals},${playerStats[player].blocks}\n`;
+    }
+
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('hidden', '');
+    a.setAttribute('href', url);
+    a.setAttribute('download', 'player_stats.csv');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
