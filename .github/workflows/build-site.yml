@@ -3,6 +3,11 @@ name: Publish on GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'src/**'
+      - '_config.js'
+      - 'deno.json'
+      - '.github/workflows/build-site.yml'
 
 permissions:
   contents: read
@@ -29,10 +34,10 @@ jobs:
         uses: actions/configure-pages@v3
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
