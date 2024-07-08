@@ -21,7 +21,6 @@ title: Fris Stats
 </div>
 
 <h2>Player Stats Table</h2>
-<button onclick="downloadCSV()">Download as CSV</button>
 <table id="statsTable">
     <thead>
         <tr>
@@ -35,5 +34,8 @@ title: Fris Stats
     <tbody>
     </tbody>
 </table>
-
+<form id="csvName">
+        <label for="fileName">Enter a filename (e.g. game_1_leeds_open):</label>
+        <input type="text" id="fileName" name="fileName" required>
+<button onclick="downloadCSV()">Download as CSV</button>
 <script src="assets/js/test.js"></script>

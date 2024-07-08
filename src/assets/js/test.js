@@ -90,13 +90,18 @@ function downloadCSV() {
     for (const player in playerStats) {
         csv += `${player},${playerStats[player].assists},${playerStats[player].goals},${playerStats[player].blocks}\n`;
     }
-
+    const fileName = document.getElementById('fileName').value
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.setAttribute('hidden', '');
     a.setAttribute('href', url);
-    a.setAttribute('download', 'player_stats.csv');
+    if (!fileName){
+        a.setAttribute('download', 'player_stats.csv');
+    }
+    else {
+        a.setAttribute('download', fileName)
+    }
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
