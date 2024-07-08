@@ -1,0 +1,12 @@
+layout: template/page.vto
+date: Git Last Modified
+
+# Automatically adds meta and social tags 
+# See https://lume.land/plugins/metas/
+metas:
+  site: Frisbee Stats
+  description: Static website for tracking stats in a frisbee match
+  image: 
+  twitter: lukestrange22
+  lang: en
+  keywords: [frisbee, stats]

@@ -1,0 +1,36 @@
+---
+title: Fris Stats
+---
+<div>
+    <h2>Add Assist and Goal Scorer</h2>
+    <form id="goalForm">
+        <label for="assistNumber">Assist Shirt Number:</label>
+        <input type="number" id="assistNumber" name="assistNumber" min="0" required>
+        <label for="goalNumber">Goal Scorer Shirt Number:</label>
+        <input type="number" id="goalNumber" name="goalNumber" min="0" required>
+        <button type="submit">Add</button>
+    </form>
+</div>
+<div>
+    <h2>Add Block/Interception</h2>
+    <form id="blockForm">
+        <label for="blockNumber">Block/Interception Shirt Number:</label>
+        <input type="number" id="blockNumber" name="blockNumber" min="0" required>
+        <button type="submit">Add</button>
+    </form>
+</div>
+
+<h2>Player Stats Table</h2>
+<table id="statsTable">
+    <thead>
+        <tr>
+            <th>Shirt Number</th>
+            <th>Total Assists</th>
+            <th>Total Goals</th>
+            <th>Total Blocks/Interceptions</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
